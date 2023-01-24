@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- Bootstrap 5.30 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <!-- My CSS File -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <div class="form">
+    <!-- Start Mobile Background -->
+    <div class="mob-cover col-sm-12">
+      <div class="step">
+        <div class="step-num step-1 active">1</div>
+        <div class="step-num step-2">2</div>
+        <div class="step-num step-3">3</div>
+        <div class="step-num step-4">4</div>
+      </div>
+    </div>
+    <!-- End Mobile Background -->
+    <div class="fluid-container m-4">
+      <div class="row p-2">
+        <!-- Start SideBar -->
+        <div class="sidebar col-md-3 py-4">
+          <div class="all-steps">
+            <div class="step">
+              <span class="step-num step-1 active">1</span>
+              <div class="step-header">
+                <p>Step 1</p>
+                <h5>Your Info</h5>
+              </div>
+            </div>
+            <div class="step my-5">
+              <span class="step-num step-2">2</span>
+              <div class="step-header">
+                <p>Step 2</p>
+                <h5>Select Plan</h5>
+              </div>
+            </div>
+            <div class="step my-5">
+              <span class="step-num step-3">3</span>
+              <div class="step-header">
+                <p>Step 3</p>
+                <h5>ADD-ONS</h5>
+              </div>
+            </div>
+            <div class="step my-5">
+              <span class="step-num step-4">4</span>
+              <div class="step-header">
+                <p>Step 4</p>
+                <h5>Summary</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End SideBar -->
+        <!-- Start Info Form -->
+        <div class="info col-sm-12 col-md-9 px-5 py-4">
+          <div class="head-info">
+            <h2>Personal info</h2>
+            <p>please provide your name, email address, and phone number</p>
+          </div>
+          <div class="info-form">
+            <div class="form-group">
+              <div class="label label-name">
+                <label for="name-input">Name</label>
+              </div>
+              <input type="text" class="form-control" id="name-input" aria-describedby="emailHelp" placeholder="Enter name" name="name" required />
+            </div>
+            <div class="form-group">
+              <div class="label label-email">
+                <label for="email-input">Email address</label>
+              </div>
+              <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email" name="email" required />
+            </div>
+            <div class="form-group">
+              <div class="label label-number">
+                <label for="phone-input">Phone</label>
+              </div>
+              <input type="tel" class="form-control" id="phone-input" placeholder="Phone" name="phone" required />
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <div class="control-btns">
+              <button href="#" class="back-btn btn btn-outline-primary">Back</button>
+              <button class="info-next-btn next-btn btn btn-primary">Next Step</button>
+            </div>
+          </div>
+        </div>
+        <!-- End Info Form -->
+        <!-- Start Select Plan -->
+        <div class="select-plan col-sm-12 col-md-9 px-5 py-4 d-none">
+          <div class="head-info col-sm-12">
+            <h2>Select your plan</h2>
+            <p>you have the option of monthly or yearly billing.</p>
+          </div>
+          <div class="bill-info">
+            <div class="all-bills row row-bills d-md-flex justify-content-around">
+              <div class="bill arcade-bill col-sm-12 col-md-3 p-3">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon" />
+                <div class="description">
+                  <h3>Arcade</h3>
+                  <p class="monthly">$9/mo</p>
+                  <div class="yearly d-none">
+                    <p>$90/yr</p>
+                    <small>2 months free</small>
+                  </div>
+                </div>
+              </div>
+              <div class="bill advanced-bill col-sm-12 col-md-3 p-3">
+                <img src="./assets/images/icon-advanced.svg" alt="Advanced Icon" />
+                <div class="description">
+                  <h3>Advanced</h3>
+                  <p class="monthly">$12/mo</p>
+                  <div class="yearly d-none">
+                    <p>$120/yr</p>
+                    <small>2 months free</small>
+                  </div>
+                </div>
+              </div>
+              <div class="bill pro-bill col-sm-12 col-md-3 p-3">
+                <img src="./assets/images/icon-pro.svg" alt="Pro Icon" />
+                <div class="description">
+                  <h3>Pro</h3>
+                  <p class="monthly">$15/mo</p>
+                  <div class="yearly d-none">
+                    <p>$150/yr</p>
+                    <small>2 months free</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="select-billing d-flex justify-content-around align-items-center m-md-5 p-2 bg-light">
+            <p>Monthly</p>
+            <label class="switch">
+              <input class="checkbox-input" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <p>Yearly</p>
+          </div>
+          <div class="control-btns">
+            <button class="bill-back-btn back-btn btn btn-outline-primary">Back</button>
+            <button class="bill-next-btn next-btn btn btn-primary">Next Step</button>
+          </div>
+        </div>
+        <!-- End Select Plan -->
+        <!-- Start Add-Ons -->
+        <div class="add-ons col-sm-12 col-md-9 px-5 py-4 d-none">
+          <div class="head-info col-sm-12">
+            <h2>Pick add-ons</h2>
+            <p>Add-ons help enhace your gaming ecperience.</p>
+          </div>
+          <div class="add-ons-info row">
+            <div class="form-check form-check-online col-sm-12 px-5 py-3 mx-2 my-3">
+              <div class="my-checkbox">
+                <div class="input">
+                  <input class="form-check-input" type="checkbox" value="1" id="onlineService" />
+                  <label class="form-check-label" for="onlineService">
+                    Online service
+                  </label>
+                </div>
+                <p class="form-check-p">Access to multiplayer games</p>
+              </div>
+              <span class="price">+$1/month</span>
+            </div>
+            <div class="form-check form-check-storage col-sm-12 px-5 py-3 mx-2 my-3">
+              <div class="my-checkbox">
+                <div class="input">
+                  <input class="form-check-input" type="checkbox" value="2" id="largerStorage" />
+                  <label class="form-check-label" for="largerStorage">
+                    Larger storgae
+                  </label>
+                </div>
+                <p class="form-check-p">Extra 1TBof cloud save</p>
+              </div>
+              <span class="price">+$2/month</span>
+            </div>
+            <div class="form-check form-check-profile col-sm-12 px-5 py-3 mx-2 my-3">
+              <div class="my-checkbox">
+                <div class="input">
+                  <input class="form-check-input" type="checkbox" value="2" id="customizeableProfile" />
+                  <label class="form-check-label" for="customizeableProfile">
+                    Customizable profile
+                  </label>
+                </div>
+                <p class="form-check-p">Custom theme on your profile</p>
+              </div>
+              <span class="price">+$2/month</span>
+            </div>
+          </div>
+          <div class="control-btns col-sm-12">
+            <button class="add-back-btn back-btn btn btn-outline-primary">Back</button>
+            <button class="add-next-btn next-btn btn btn-primary">Next Step</button>
+          </div>
+        </div>
+        <!-- End Add-Ons -->
+        <!-- Start Finish Up -->
+        <div class="finish-up col-sm-12 col-md-9 px-5 py-4 d-none">
+          <div class="head-info col-sm-12">
+            <h2>Finishing up</h2>
+            <p>Double-check everythimg looks OK before confirming.</p>
+          </div>
+          <div class="finish-details p-5"></div>
+          <div class="overall-cost d-flex justify-content-between py-4 px-5">
+            <div class="overall-cost-text">Total (Per Month)</div>
+          </div>
+          <div class="control-btns col-sm-12">
+            <button class="finish-back-btn back-btn btn btn-outline-primary">Back</button>
+            <button class="finish-next-btn next-btn btn btn-success">Confirm</button>
+          </div>
+        </div>
+        <!-- End Finish Up -->
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap 5.30 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!-- My JS File -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

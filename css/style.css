@@ -397,10 +397,33 @@ input:checked + .slider:before {
 
 .finish-details a {
   text-decoration: none;
+  /* color: var(--Purplish-blue); */
+  color: var(--Cool-gray);
+}
+
+.finish-details a:hover {
   color: var(--Purplish-blue);
 }
 
 .single-addons {
   display: flex;
   justify-content: space-between;
+}
+
+.overall-cost span {
+  color: var(--Purplish-blue);
+  font-weight: 600;
+}
+
+.single-addons p {
+  color: var(--Cool-gray);
+}
+
+.thanks-h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.thanks-p {
+  color: var(--Cool-gray);
 }

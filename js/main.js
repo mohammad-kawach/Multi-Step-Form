@@ -189,6 +189,8 @@ function calcPlanCost() {
 
 let planBackBtn = document.querySelector('.bill-back-btn');
 planBackBtn.addEventListener('click', () => {
+  removeClass('active');
+    addClass('step-1', 'active');
   document.querySelector('.info').classList.remove('d-none');
   document.querySelector('.select-plan').classList.add('d-none');
 });
@@ -208,12 +210,6 @@ planNextBtn.addEventListener('click', () => {
     alert('Please pick a plan');
   }
 });
-
-/*
-if(document.querySelector('#customizeableProfile').checked) {
-  document.querySelector('.form-check-profile').classList.add('active2');
-}
-*/
 
 // uncheck all checkbox
 window.addEventListener('load', () => {
@@ -240,14 +236,6 @@ document.querySelector('#largerStorage').addEventListener('click', () => {
 document.querySelector('#customizeableProfile').addEventListener('click', () => {
   checkAddons('customizeableProfile', 'form-check-profile');
 });
-
-/*
-  let incorrectPassMsg = document.createElement("span");
-  incorrectPassMsg.classList.add('false-pass');
-  incorrectPassMsg.classList.add('incorrect');
-  incorrectPassMsg.appendChild(document.createTextNode('Password incorrect!.'));
-  document.querySelector('.label-number').appendChild(incorrectPassMsg);
-*/
 
 function calcOverallCost() {
   let cost = 0;
@@ -303,8 +291,14 @@ function finishDeatails() {
   planHead.appendChild(headPrice);
   let changeLink = document.createElement("a");
   changeLink.appendChild(document.createTextNode('Change'));
+  changeLink.classList.add('change-link');
   changeLink.setAttribute('href', '#');
   headPrice.appendChild(changeLink);
+
+  changeLink.addEventListener('click', () => {
+    sessionStorage.clear();
+    window.location.reload();
+  });
 
   let allAddOns = document.createElement("div");
   allAddOns.classList.add('all-addons');
@@ -394,4 +388,14 @@ finishBackBtn.addEventListener('click', () => {
   addClass('step-3', 'active');
   document.querySelector('.add-ons').classList.remove('d-none');
   document.querySelector('.finish-up').classList.add('d-none');
+});
+
+// let theChangeLink = document.querySelector('.change-link');
+
+let finishConfirmBtn = document.querySelector('.finish-next-btn');
+finishConfirmBtn.addEventListener('click', () => {
+  removeClass('active');
+  addClass('step-4', 'active');
+  document.querySelector('.finish-up').classList.add('d-none');
+  document.querySelector('.summary').classList.remove('d-none');
 });
